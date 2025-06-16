@@ -1,8 +1,8 @@
 ## Bienvenid@s a Tu Conversor de Unidades
 
-#### Se trata de un pequeño ejercicio para practicar Python teniendo como objetivo crear un programa que nos convierta los datos que le indiquemos en la unidad seleccionada.
+#### Convierte los datos que le indiquemos en la unidad deseada.
 
-#### Tu Conversor de Unidades es un buen ejercicio para practicar Python. Se puede complicar todo lo que uno quiera, ya que simplemente tiene que añadirse más unidades de medida al código y funcionará.
+#### Se puede complicar todo lo que uno quiera, ya que simplemente tiene que añadirse más unidades de medida al código y funcionará.
 
 ### Qué he usado
 
