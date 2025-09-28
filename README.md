@@ -1,8 +1,8 @@
-## Bienvenid@s a Tu Conversor de Unidades
+### Bienvenid@s a Tu Conversor de Unidades
 
 ##### **Convierte los datos que quieras en la unidad deseada**
-
-##### Se puede complicar todo lo que uno quiera, ya que simplemente tiene que añadirse más unidades de medida al código y funcionará.
+> [!NOTE]
+> ###### Se puede completar todo lo que uno quiera. Simplemente hay que añadir más unidades de medida al código.
 
 
 #### Qué he usado
@@ -15,5 +15,5 @@
  - Documentación Markdown [Markdown](https://markdown.es)
 
 ---
-> [!TIP]
+> [!IMPORTANT]
 > ###### Si consideras útil el repositorio, apóyalo haciendo "★ Star" ¡Gracias!
