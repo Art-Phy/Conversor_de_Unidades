@@ -1,4 +1,7 @@
-### Conversor de Unidades ###
+###===Conversor de Unidades===###
+# Copyright (c) 2025 [Art_Phy]
+# Licencia: MIT (ver archivo LICENSE para más detalles)
+
 
 # Importamos la librería locale para que los números se muestren en el formato regional del usuario (dependiendo de su configuración local)
 import locale
