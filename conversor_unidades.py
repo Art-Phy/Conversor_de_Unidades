@@ -1,5 +1,11 @@
 ### Conversor de Unidades ###
 
+# Importamos la librería locale para que los números se muestren en el formato regional del usuario (dependiendo de su configuración local)
+import locale
+locale.setlocale(locale.LC_ALL, '')
+
+
+
 # creamos las funciones para las distintas posibles conversiones
 def euros_a_usdolares(euros):
     return euros * 1.11
@@ -38,10 +44,14 @@ def conversor():
         print(" 6. Millas a Kilómetros")
         print(" 7. Centímetros a Pulgadas")
         print(" 8. Pulgadas a Centímentros")
+        print(" 9. Salir")
 
-        # le decimos al usuario que ingrese el número a convertir
-        opcion = int(input("Introduce el número de la conversión deseada: "))
-
+        # le decimos al usuario que ingrese el número a convertir y añadimos las funciones de la librería  locale.
+        try:    
+            opcion = int(input("Introduce el número de la conversión deseada: "))
+        except ValueError:
+            print("X Entrada no válida. Por favor introduce un número del 1 al 9.")
+            
         if opcion == 1:
             euros =float(input("Introduce la cantidad en Euros: "))
             print(f"{euros} € son {euros_a_usdolares(euros)} $.")
