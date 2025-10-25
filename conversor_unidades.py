@@ -1,6 +1,14 @@
 ### Conversor de Unidades ###
 
-# creamos las funciones para las distintas posibles conversiones
+# Importamos la librería locale para que los números se muestren en el formato regional del usuario (dependiendo de su configuración local)
+import locale
+locale.setlocale(locale.LC_ALL, '')
+
+# Función para formatear números según la config local + dos decimales
+def formatear(valor):
+    return locale.format_string('%.2f', valor, grouping=True)
+
+# Tipos de conversiones
 def euros_a_usdolares(euros):
     return euros * 1.11
 
@@ -14,7 +22,7 @@ def farenheit_a_celsius(farenheit):
     return (farenheit - 32) * 5/9
 
 def km_a_millas(km):
-    return km / 0.621371
+    return km / 1.609
 
 def millas_a_km(millas):
     return millas * 1.609
@@ -25,6 +33,7 @@ def cm_a_pulgadas(cm):
 def pulgadas_a_cm(pulgadas):
     return pulgadas * 2.54
 
+# Menú de opciones en terminal
 def mostrar_menu():
 
         print("\n=== CONVERSOR DE UNIDADES ===")
@@ -38,7 +47,7 @@ def mostrar_menu():
         print(" 8. Pulgadas a Centímentros")
         print(" 9. Salir")
 
-# hacemos una función para que muestre un menú de opciones para el usuario
+# Función principal 
 def conversor():
     while True:
         mostrar_menu() # añadimos un bucle para preguntar al final al usuario qué quiere hacer
@@ -60,23 +69,25 @@ def conversor():
             continue
 
 
-# Comienzamos a manejar las distintas opciones
+        # Manejo de las opciones
         if opcion == 1:
-            print(f"{cantidad} € son {euros_a_usdolares(cantidad):.2f} $.")
+            print(f"{formatear(cantidad)} € son {formatear(euros_a_usdolares(cantidad))} $.")
         elif opcion == 2:
-            print(f"{cantidad} $ son {usdolares_a_euros(cantidad):.2f} €.")
+            print(f"{formatear(cantidad)} $ son {formatear(usdolares_a_euros(cantidad))} €.")
         elif opcion == 3:
-            print(f"{cantidad} °C son {celsius_a_farenheit(cantidad):.2f} °F.")
+            print(f"{formatear(cantidad)} °C son {formatear(celsius_a_farenheit(cantidad))} °F.")
         elif opcion == 4:
-            print(f"{cantidad} °F son {farenheit_a_celsius(cantidad):.2f} °C.")
+            farenheit =float(input("Introduce la temperatura en grados Farenheit: "))
+            print(f"{farenheit} grados Farenheit son {farenheit_a_celsius(farenheit)} grados Celsius.")
+
         elif opcion == 5:
-            print(f"{cantidad} km son {km_a_millas(cantidad):.2f} millas.")
+            print(f"{formatear(cantidad)} km son {formatear(km_a_millas(cantidad))} millas.")
         elif opcion == 6:
-            print(f"{cantidad} millas son {millas_a_km(cantidad):.2f} km.")
+            print(f"{formatear(cantidad)} millas son {formatear(millas_a_km(cantidad))} km.")
         elif opcion == 7:
-            print(f"{cantidad} cm son {cm_a_pulgadas(cantidad):.2f} pulgadas.")
+            print(f"{formatear(cantidad)} cm son {formatear(cm_a_pulgadas(cantidad))} pulgadas.")
         elif opcion == 8:
-            print(f"{cantidad} pulgadas son {pulgadas_a_cm(cantidad):.2f} cm.")
+            print(f"{formatear(cantidad)} pulgadas son {formatear(pulgadas_a_cm(cantidad))} cm.")
         else:
             print(" X Opción no válida. Intenta de nuevo.")
 
